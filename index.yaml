@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  keycloakify-starter:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-12T16:48:30.948084933Z"
+    description: Keycloakify-demo-app helm chart
+    digest: 1cd7be6520146822892bfb418498f2d5b2e5f793ec629e423f208a82aa56d6ee
+    icon: https://codegouvfr.github.io/helm-charts/icons/keycloakify.png
+    name: keycloakify-starter
+    type: application
+    urls:
+    - https://github.com/codegouvfr/helm-charts/releases/download/keycloakify-starter-0.0.3/keycloakify-starter-0.0.3.tgz
+    version: 0.0.3
+  sill:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-12T16:48:31.08576504Z"
+    description: Application behind https://sill.code.gouv.fr
+    digest: c42e37f6db1c17a82a20743092e2a83e3732d31f59ba8b4c1db16355f10ec0fb
+    icon: https://codegouvfr.github.io/helm-charts/icons/marianne.png
+    name: sill
+    type: application
+    urls:
+    - https://github.com/codegouvfr/helm-charts/releases/download/sill-0.0.8/sill-0.0.8.tgz
+    version: 0.0.8
+generated: "2023-03-12T16:48:31.08576974Z"
