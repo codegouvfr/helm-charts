@@ -29,7 +29,7 @@ ingress:
 
 replicaCount: 1
 image:
-  name: etalab/etalab-website
+  name: codegouvfr/keycloakify-starter
   version: latest
   pullPolicy: Always
 podSecurityContext:
@@ -43,7 +43,7 @@ securityContext:
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-containerPort: 3000
+containerPort: 80
 service:
   type: ClusterIP
   port: 80

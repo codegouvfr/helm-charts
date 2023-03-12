@@ -1,7 +1,7 @@
 apiVersion: v2
 name: sill
-description: Application behind https://sill.etalab.gouv.fr
-icon: https://etalab.github.io/helm-charts/icons/marianne.png
+description: Application behind https://sill.code.gouv.fr
+icon: https://codegouvfr.github.io/helm-charts/icons/marianne.png
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives

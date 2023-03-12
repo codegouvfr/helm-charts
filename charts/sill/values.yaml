@@ -31,7 +31,7 @@ ui:
   name: ui
   replicaCount: 1
   image:
-    name: etalab/sill-web
+    name: codegouvfr/sill-web
     version: latest
     pullPolicy: Always
   podSecurityContext:
@@ -66,20 +66,7 @@ ui:
   tolerations: []
   affinity: {}
 # env:
-#   CONFIGURATION: |
-#     {
-#       "mockAuthentication": {
-#         "isUserInitiallyLoggedIn": false,
-#         "user": {
-#           "email": "pierre.dupont@gouv.fr",
-#           "familyName": "Dupont",
-#           "firstName": "Pierre",
-#           "username": "dupontp",
-#           "groups": '[]',
-#           "local": "fr"
-#         }
-#       }
-#     }
+#   API_URL: /api
 
       
 
@@ -87,7 +74,7 @@ api:
   name: api
   replicaCount: 1
   image:
-    name: etalab/sill-api
+    name: codegouvfr/sill-api
     version: latest
     pullPolicy: Always
   podSecurityContext:
@@ -120,26 +107,26 @@ api:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-#  env:
-#    CONFIGURATION: |
-#      {
-#        /*
-#        "keycloakParams": {
-#          "url": "https://auth.etalab.gouv.fr/auth",
-#          "realm": "etalab",
-#          "clientId": "sill"
-#        }
-#        */
-#	       "jwtClaims": {
-#		       "email": "email",
-#		       "familyName": "family_name",
-#		       "firstName": "given_name",
-#		       "username": "preferred_username",
-#  	       "groups": "groups",
-#		       "locale": "locale"
-#	       },
-#        "sillCsvRepoUrl": "https://github.com/etalab/sill-csv",
-#        "archiveRepoUrl": "https://github.com/etalab/sill-csv-private",
-#        "archiveRepoBranch": "archive",
-#        "githubPersonalAccessToken": "xxxxxxx"
-#      }
+# env:
+#   CONFIGURATION: |
+#     {
+#       "keycloakParams": {
+#         "url": "https://auth.code.gouv.fr/auth",
+#         "realm": "etalab",
+#         "clientId": "sill",
+#         "termsOfServices": "https://sill.code.gouv.fr/tos_fr.md",
+#         "adminPassword": "xxxxxxx",
+#         "agencyNameAttributeName:": "agencyName"
+#       },
+#       "jwtClaimByUserKey": {
+#         "id": "sub",
+#         "email": "email",
+#         "agencyName": "agency_name",
+#         "locale": "locale"
+#       },
+#       "dataRepoSshUrl": "git@github.com:codegouvfr/sill-data.git",
+#       "sshPrivateKeyForGitName": "id_ed302229",
+#       "sshPrivateKeyForGit": "-----BEGIN OPENSSH PRIVATE KEY-----\n..." ,
+#       "githubWebhookSecret": "xxxxxx",
+#       "githubPersonalAccessToken": "xxxxxxx",
+#     }

@@ -1,7 +1,7 @@
 apiVersion: v2
-name: keycloakify-demo-app
+name: keycloakify-starter
 description: Keycloakify-demo-app helm chart
-icon: https://etalab.github.io/helm-charts/icons/keycloakify.png
+icon: https://codegouvfr.github.io/helm-charts/icons/keycloakify.png
 # A chart can be either an 'application' or a 'library' chart.
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
