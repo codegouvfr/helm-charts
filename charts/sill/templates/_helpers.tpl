@@ -6,8 +6,8 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-{{- define "sill.ui.name" -}}
-{{- printf "%s-%s" (include "sill.name" .) .Values.ui.name | trunc 63 | trimSuffix "-" -}}
+{{- define "sill.web.name" -}}
+{{- printf "%s-%s" (include "sill.name" .) .Values.web.name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 
@@ -34,8 +34,8 @@ If release name contains chart name it will be used as a full name.
 {{- end -}}
 {{- end -}}
 
-{{- define "sill.ui.fullname" -}}
-{{- printf "%s-%s" (include "sill.fullname" .) .Values.ui.name | trunc 63 | trimSuffix "-" -}}
+{{- define "sill.web.fullname" -}}
+{{- printf "%s-%s" (include "sill.fullname" .) .Values.web.name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 
@@ -54,8 +54,8 @@ Create chart name and version as used by the chart label.
 {{- printf "sill-api" -}}
 {{- end -}}
 
-{{- define "sill.ui.chart" -}}
-{{- printf "sill-ui" -}}
+{{- define "sill.web.chart" -}}
+{{- printf "sill-web" -}}
 {{- end -}}
 
 
@@ -79,9 +79,9 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
 
-{{- define "sill.ui.labels" -}}
-helm.sh/chart: {{ include "sill.ui.chart" . }}
-{{ include "sill.ui.selectorLabels" . }}
+{{- define "sill.web.labels" -}}
+helm.sh/chart: {{ include "sill.web.chart" . }}
+{{ include "sill.web.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -100,8 +100,8 @@ app.kubernetes.io/name: {{ include "sill.api.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
-{{- define "sill.ui.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "sill.ui.name" . }}
+{{- define "sill.web.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "sill.web.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
@@ -115,9 +115,9 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 {{- end -}}
 
-{{- define "sill.ui.serviceAccountName" -}}
+{{- define "sill.web.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
-    {{ default (include "sill.ui.fullname" .) .Values.serviceAccount.name }}
+    {{ default (include "sill.web.fullname" .) .Values.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}

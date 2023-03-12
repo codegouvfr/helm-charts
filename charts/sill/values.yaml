@@ -27,8 +27,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-ui:
-  name: ui
+web:
+  name: web
   replicaCount: 1
   image:
     name: codegouvfr/sill-web

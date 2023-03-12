@@ -1,9 +1,9 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullNameApi := include "sill.api.fullname" . -}}
-{{- $fullNameUi := include "sill.ui.fullname" . -}}
+{{- $fullNameWeb := include "sill.web.fullname" . -}}
 {{- $fullName := include "sill.fullname" . -}}
 {{- $svcPortApi := .Values.api.service.port -}}
-{{- $svcPortUi := .Values.ui.service.port -}}
+{{- $svcPortWeb := .Values.web.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -42,8 +42,8 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ $fullNameUi }}
+                name: {{ $fullNameWeb }}
                 port:
-                  number: {{ $svcPortUi }}
+                  number: {{ $svcPortWeb }}
     {{- end }}
 {{- end }}
