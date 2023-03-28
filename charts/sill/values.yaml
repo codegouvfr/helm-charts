@@ -112,12 +112,12 @@ api:
 #     {
 #       "keycloakParams": {
 #         "url": "https://auth.code.gouv.fr/auth",
-#         "realm": "etalab",
+#         "realm": "codegouv",
 #         "clientId": "sill",
-#         "termsOfServices": "https://sill.code.gouv.fr/tos_fr.md",
-#         "adminPassword": "xxxxxxx",
+#         "adminPassword": "xxxxxxxxxxxxxxxxxxxxx",
 #         "agencyNameAttributeName:": "agencyName"
 #       },
+#       "termsOfServiceUrl": "https://sill.code.gouv.fr/tos_fr.md",
 #       "jwtClaimByUserKey": {
 #         "id": "sub",
 #         "email": "email",
@@ -125,8 +125,8 @@ api:
 #         "locale": "locale"
 #       },
 #       "dataRepoSshUrl": "git@github.com:codegouvfr/sill-data.git",
-#       "sshPrivateKeyForGitName": "id_ed302229",
-#       "sshPrivateKeyForGit": "-----BEGIN OPENSSH PRIVATE KEY-----\n..." ,
-#       "githubWebhookSecret": "xxxxxx",
-#       "githubPersonalAccessToken": "xxxxxxx",
+#       "sshPrivateKeyForGitName": "id_ed25519",
+#       "sshPrivateKeyForGit": "-----BEGIN OPENSSH PRIVATE KEY-----\nb3xxxxxxxxxxxxxxxEC\n-----END OPENSSH PRIVATE KEY-----\n",
+#       "githubWebhookSecret": "xxxxxxxxxxxxxxx",
+#       "githubPersonalAccessToken": "ghp_xxxxxxxxxxxxxxxx",
 #     }
