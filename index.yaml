@@ -15,6 +15,17 @@ entries:
   sill:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-03-28T12:10:25.719665948Z"
+    description: Application behind https://sill.code.gouv.fr
+    digest: c39d8bfbce073949b1dbed13d126633dabbef71111c4e658483ffbbd1990f668
+    icon: https://codegouvfr.github.io/helm-charts/icons/marianne.png
+    name: sill
+    type: application
+    urls:
+    - https://github.com/codegouvfr/helm-charts/releases/download/sill-1.1.1/sill-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-03-12T23:49:21.113962959Z"
     description: Application behind https://sill.code.gouv.fr
     digest: 2b5f215ad44d312646c34a2a45acce906889643a6c027517826256e32ed0cf7f
@@ -35,4 +46,4 @@ entries:
     urls:
     - https://github.com/codegouvfr/helm-charts/releases/download/sill-1.0.0/sill-1.0.0.tgz
     version: 1.0.0
-generated: "2023-03-12T23:49:21.114017458Z"
+generated: "2023-03-28T12:10:25.719675948Z"
