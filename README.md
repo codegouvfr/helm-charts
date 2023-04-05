@@ -1,5 +1,5 @@
 <p align="center">
-    <i>Helm charts for software developed and/or used at <a href="https://code.gouv.fr">CodeGouv</a></i>
+    <i>Helm charts for software developed by <a href="https://code.gouv.fr">CodeGouv</a></i>
     <br>
     <br>
     <a href="https://github.com/codegouvfr/helm-charts/actions">
