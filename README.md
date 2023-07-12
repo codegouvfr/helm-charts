@@ -18,3 +18,7 @@ The repo is also browsable directly https://codegouvfr.github.io/helm-charts/ind
 - Deployed by [GitHub Actions](https://github.com/codegouvfr/helm-charts/blob/main/.github/workflows/ci.yml)
 
 Theses charts are used to put apps in production from [codegouvfr/paris-sspcloud](https://github.com/codegouvfr/paris-sspcloud) (It's a private repo).  
+
+# License
+
+[MIT](LICENSE), Direction interministérielle du numérique.
