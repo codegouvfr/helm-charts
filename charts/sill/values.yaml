@@ -34,6 +34,8 @@ web:
     name: codegouvfr/sill-web
     version: latest
     pullPolicy: Always
+  #updateStrategy:
+  #  type: RollingUpdate
   podSecurityContext:
     {}
     # fsGroup: 2000
@@ -68,7 +70,7 @@ web:
 # env:
 #   API_URL: /api
 
-      
+
 
 api:
   name: api
@@ -77,6 +79,8 @@ api:
     name: codegouvfr/sill-api
     version: latest
     pullPolicy: Always
+  #updateStrategy:
+  #  type: RollingUpdate
   podSecurityContext:
     {}
     # fsGroup: 2000
@@ -130,3 +134,5 @@ api:
 #       "githubWebhookSecret": "xxxxxxxxxxxxxxx",
 #       "githubPersonalAccessToken": "ghp_xxxxxxxxxxxxxxxx",
 #     }
+
+# existingSecret: existingSecretName
