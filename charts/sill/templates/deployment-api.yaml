@@ -6,13 +6,16 @@ metadata:
     {{- include "sill.api.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.api.replicaCount }}
+  {{- if .Values.api.updateStrategy }}
+  strategy: {{- toYaml .Values.api.updateStrategy | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels:
       {{- include "sill.api.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
       labels:
         {{- include "sill.api.selectorLabels" . | nindent 8 }}
     spec:
@@ -29,8 +32,12 @@ spec:
             {{- toYaml .Values.api.securityContext | nindent 12 }}
           image: "{{ .Values.api.image.name }}:{{ .Values.api.image.version }}"
           envFrom:
-            - configMapRef:
+            - secretRef:
+                {{- if .Values.existingSecret }}
+                name: {{ .Values.existingSecret }}
+                {{- else }}
                 name: {{ template "sill.fullname" . }}
+                {{- end }}
           imagePullPolicy: {{ .Values.api.image.pullPolicy }}
           ports:
             - name: http
@@ -46,6 +53,12 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.api.resources | nindent 12 }}
+          volumeMounts:
+            - name: cache
+              mountPath: /node_modules/.cache/
+      volumes:
+        - name: cache
+          emptyDir: {}
       {{- with .Values.api.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
